@@ -1,0 +1,6 @@
+.vscode/
+.vs/
+drf_example/__pycache__/*
+languages/__pycache__/*
+languages/migrations/__pycache__/*
+*.sqlite3
