@@ -6,33 +6,49 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('languages', '0001_initial'),
-    ]
+    dependencies = [("languages", "0001_initial")]
 
     operations = [
         migrations.CreateModel(
-            name='Paradigm',
+            name="Paradigm",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50)),
             ],
         ),
         migrations.CreateModel(
-            name='Programmer',
+            name="Programmer",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50)),
             ],
         ),
         migrations.AlterField(
-            model_name='language',
-            name='paradigm',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='languages.Paradigm'),
+            model_name="language",
+            name="paradigm",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="languages.Paradigm"
+            ),
         ),
         migrations.AddField(
-            model_name='programmer',
-            name='languages',
-            field=models.ManyToManyField(to='languages.Language'),
+            model_name="programmer",
+            name="languages",
+            field=models.ManyToManyField(to="languages.Language"),
         ),
     ]
